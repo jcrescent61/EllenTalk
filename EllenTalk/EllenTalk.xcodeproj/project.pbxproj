@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		9B293CA527AFAC6500B0C904 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B293CA427AFAC6500B0C904 /* AppDelegate.swift */; };
 		9B293CA727AFAC6500B0C904 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B293CA627AFAC6500B0C904 /* SceneDelegate.swift */; };
-		9B293CA927AFAC6500B0C904 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B293CA827AFAC6500B0C904 /* ViewController.swift */; };
-		9B293CAC27AFAC6500B0C904 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B293CAA27AFAC6500B0C904 /* Main.storyboard */; };
 		9B293CAE27AFAC6600B0C904 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B293CAD27AFAC6600B0C904 /* Assets.xcassets */; };
 		9B293CB127AFAC6600B0C904 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B293CAF27AFAC6600B0C904 /* LaunchScreen.storyboard */; };
+		9B293CBD27AFAE2A00B0C904 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B293CBC27AFAE2A00B0C904 /* MainView.swift */; };
+		9B293CBF27AFAE5800B0C904 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B293CBE27AFAE5800B0C904 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9B293CA127AFAC6500B0C904 /* EllenTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EllenTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B293CA427AFAC6500B0C904 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B293CA627AFAC6500B0C904 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9B293CA827AFAC6500B0C904 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9B293CAB27AFAC6500B0C904 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B293CAD27AFAC6600B0C904 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B293CB027AFAC6600B0C904 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B293CB227AFAC6600B0C904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B293CBC27AFAE2A00B0C904 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		9B293CBE27AFAE5800B0C904 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,47 @@
 		9B293CA327AFAC6500B0C904 /* EllenTalk */ = {
 			isa = PBXGroup;
 			children = (
+				9B293CB827AFAD7C00B0C904 /* Entry */,
+				9B293CBA27AFADEF00B0C904 /* Scene */,
+				9B293CB927AFADA400B0C904 /* SupportFile */,
+			);
+			path = EllenTalk;
+			sourceTree = "<group>";
+		};
+		9B293CB827AFAD7C00B0C904 /* Entry */ = {
+			isa = PBXGroup;
+			children = (
 				9B293CA427AFAC6500B0C904 /* AppDelegate.swift */,
 				9B293CA627AFAC6500B0C904 /* SceneDelegate.swift */,
-				9B293CA827AFAC6500B0C904 /* ViewController.swift */,
-				9B293CAA27AFAC6500B0C904 /* Main.storyboard */,
+			);
+			name = Entry;
+			sourceTree = "<group>";
+		};
+		9B293CB927AFADA400B0C904 /* SupportFile */ = {
+			isa = PBXGroup;
+			children = (
 				9B293CAD27AFAC6600B0C904 /* Assets.xcassets */,
 				9B293CAF27AFAC6600B0C904 /* LaunchScreen.storyboard */,
 				9B293CB227AFAC6600B0C904 /* Info.plist */,
 			);
-			path = EllenTalk;
+			path = SupportFile;
+			sourceTree = "<group>";
+		};
+		9B293CBA27AFADEF00B0C904 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				9B293CBB27AFAE0D00B0C904 /* Main */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		9B293CBB27AFAE0D00B0C904 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9B293CBC27AFAE2A00B0C904 /* MainView.swift */,
+				9B293CBE27AFAE5800B0C904 /* MainViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +159,6 @@
 			files = (
 				9B293CB127AFAC6600B0C904 /* LaunchScreen.storyboard in Resources */,
 				9B293CAE27AFAC6600B0C904 /* Assets.xcassets in Resources */,
-				9B293CAC27AFAC6500B0C904 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +169,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B293CA927AFAC6500B0C904 /* ViewController.swift in Sources */,
 				9B293CA527AFAC6500B0C904 /* AppDelegate.swift in Sources */,
+				9B293CBD27AFAE2A00B0C904 /* MainView.swift in Sources */,
 				9B293CA727AFAC6500B0C904 /* SceneDelegate.swift in Sources */,
+				9B293CBF27AFAE5800B0C904 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9B293CAA27AFAC6500B0C904 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9B293CAB27AFAC6500B0C904 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9B293CAF27AFAC6600B0C904 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -291,10 +315,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RUFP7D8BXB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EllenTalk/Info.plist;
+				INFOPLIST_FILE = EllenTalk/SupportFile/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -319,10 +343,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RUFP7D8BXB;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EllenTalk/Info.plist;
+				INFOPLIST_FILE = EllenTalk/SupportFile/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
