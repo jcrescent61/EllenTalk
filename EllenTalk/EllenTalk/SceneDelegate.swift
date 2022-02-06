@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-            self?.window?.rootViewController = MainViewController()
+            self?.window?.rootViewController = UINavigationController(rootViewController: MainViewController())
             self?.window?.backgroundColor = .white
             self?.window?.makeKeyAndVisible()
         }
