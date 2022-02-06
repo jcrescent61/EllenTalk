@@ -7,8 +7,8 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
-    private lazy var mainView: MainView = MainView(frame: view.bounds)
+class MainViewController: UIViewController, MainViewDelegate {
+    private lazy var mainView: MainView = .init(frame: view.bounds)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,5 +19,10 @@ class MainViewController: UIViewController {
 extension MainViewController {
     private func setUp() {
         view = mainView
+        mainView.delegate = self
+    }
+    
+    func touchUpSignInButton() {
+        print("TouchUpSignInButton Delegate")
     }
 }
