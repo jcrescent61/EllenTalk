@@ -23,10 +23,10 @@ class MainView: UIView {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.text = "엘렌이 직접 만든 메신저\n엘렌톡"
+        label.text = "Ellen Talk"
         label.textColor = .init(named: "subColor")
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 26, weight: .bold)
+        label.font = .systemFont(ofSize: 40, weight: .heavy)
         label.numberOfLines = 0
         return label
     }()
@@ -64,15 +64,15 @@ extension MainView {
         
         // MARK: - logoImageView
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: topAnchor, constant: 150),
+            logoImageView.topAnchor.constraint(equalTo: topAnchor, constant: 200),
             logoImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            logoImageView.heightAnchor.constraint(equalToConstant: 250),
-            logoImageView.widthAnchor.constraint(equalToConstant: 250)
+            logoImageView.heightAnchor.constraint(equalToConstant: 300),
+            logoImageView.widthAnchor.constraint(equalToConstant: 300)
         ])
         
         // MARK: - titleLabel
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 5),
+            titleLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: -30),
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             titleLabel.heightAnchor.constraint(equalToConstant: 100),
             titleLabel.widthAnchor.constraint(equalToConstant: 300)
@@ -90,6 +90,6 @@ extension MainView {
     @objc
     private func touchUpSignInButton() {
         delegate?.touchUpSignInButton()
-        print("Touch Event")
+        print("SignInButton Touch Event")
     }
 }
