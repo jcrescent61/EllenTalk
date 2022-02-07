@@ -23,7 +23,6 @@ extension MainViewController {
     }
     
     func touchUpSignInButton() {
-        print("TouchUpSignInButton Delegate")
         self.navigationController?.pushViewController(SignUpViewController(), animated: true)
     }
 }

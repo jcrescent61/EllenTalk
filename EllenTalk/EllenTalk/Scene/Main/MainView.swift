@@ -90,6 +90,5 @@ extension MainView {
     @objc
     private func touchUpSignInButton() {
         delegate?.touchUpSignInButton()
-        print("SignInButton Touch Event")
     }
 }
