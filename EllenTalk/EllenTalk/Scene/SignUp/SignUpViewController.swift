@@ -14,6 +14,10 @@ class SignUpViewController: UIViewController, SignUpViewDelegate {
         super.viewDidLoad()
         setUp()
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+         self.view.endEditing(true)
+   }
 
     deinit {
         print("SignUpView was Deinitialized")
@@ -27,6 +31,7 @@ extension SignUpViewController {
     }
     
     func touchUpDoneButton() {
-        print("DoneButton Delegate")
+        let userInfo: [String?] = signUpView.returnText()
+        print(EmailChecker(userInfo[0]).check() && PasswordChecker(userInfo[1]).check() && PasswordIsSameChecker(userInfo[1], userInfo[2]).check())
     }
 }

@@ -31,7 +31,7 @@ class SignUpView: UIView {
         textField.backgroundColor = .systemGray4
         textField.layer.cornerRadius = 8
         textField.textAlignment = .init(.justified)
-        textField.font = .systemFont(ofSize: 20, weight: .bold)
+        textField.font = .systemFont(ofSize: 15, weight: .bold)
         return textField
     }()
     
@@ -47,11 +47,12 @@ class SignUpView: UIView {
     
     private lazy var passwordTextField: UITextField = {
         let textField = UITextField(frame: .zero)
+        textField.placeholder = "대,소,특수문자 1회 포함한 최소 8자리"
         textField.textColor = .black
         textField.backgroundColor = .systemGray4
         textField.layer.cornerRadius = 8
         textField.textAlignment = .init(.justified)
-        textField.font = .systemFont(ofSize: 20, weight: .bold)
+        textField.font = .systemFont(ofSize: 15, weight: .bold)
         return textField
     }()
     
@@ -71,7 +72,7 @@ class SignUpView: UIView {
         textField.backgroundColor = .systemGray4
         textField.layer.cornerRadius = 8
         textField.textAlignment = .init(.justified)
-        textField.font = .systemFont(ofSize: 20, weight: .bold)
+        textField.font = .systemFont(ofSize: 15, weight: .bold)
         return textField
     }()
     
@@ -173,6 +174,13 @@ extension SignUpView {
     @objc
     private func touchUpDoneButton() {
         delegate?.touchUpDoneButton()
-        print("DoneButton Touch Event")
+
+    }
+    
+    func returnText() -> [String?] {
+        let email: String? = emailTextField.text?.description
+        let password: String? = passwordTextField.text?.description
+        let passwordCheck: String? = passwordCheckTextField.text?.description
+        return [email, password, passwordCheck]
     }
 }
