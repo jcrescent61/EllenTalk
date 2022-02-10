@@ -37,7 +37,6 @@ struct PasswordChecker: InfoCheckable {
         self.password = password
     }
     
-    
     func check() -> Bool {
         guard let password = password else { return false }
         let regex = try? NSRegularExpression(pattern: self.pattern)

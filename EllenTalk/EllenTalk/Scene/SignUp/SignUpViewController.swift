@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController, SignUpViewDelegate {
+class SignUpViewController: UIViewController {
     private lazy var signUpView: SignUpView = SignUpView(frame: view.bounds)
     
     override func viewDidLoad() {
@@ -27,11 +27,6 @@ class SignUpViewController: UIViewController, SignUpViewDelegate {
 extension SignUpViewController {
     private func setUp() {
         view = signUpView
-        signUpView.delegate = self
-    }
-    
-    func touchUpDoneButton() {
-        let userInfo: [String?] = signUpView.returnText()
-        print(EmailChecker(userInfo[0]).check() && PasswordChecker(userInfo[1]).check() && PasswordIsSameChecker(userInfo[1], userInfo[2]).check())
+        signUpView.backgroundColor = .white
     }
 }
