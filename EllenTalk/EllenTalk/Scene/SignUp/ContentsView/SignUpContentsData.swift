@@ -7,6 +7,8 @@
 
 import UIKit
 
+protocol SignUpViewable: UIView {}
+
 enum SignUpContentsData {
     case email
     case password
