@@ -18,8 +18,9 @@
 		9B293CC727AFB23C00B0C904 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B293CC627AFB23C00B0C904 /* UIView+.swift */; };
 		9B293CCA27AFD56A00B0C904 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B293CC927AFD56A00B0C904 /* SignUpView.swift */; };
 		9B293CCC27AFD57E00B0C904 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B293CCB27AFD57E00B0C904 /* SignUpViewController.swift */; };
+		9BB3B43B27B50D3700653610 /* SignUpContentsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB3B43A27B50D3700653610 /* SignUpContentsData.swift */; };
 		9BBD233F27B0A352004C1962 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD233E27B0A352004C1962 /* UserInfo.swift */; };
-		9BBD234127B0C169004C1962 /* UserInfoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD234027B0C169004C1962 /* UserInfoHandler.swift */; };
+		9BBD234127B0C169004C1962 /* SignUpContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD234027B0C169004C1962 /* SignUpContentsView.swift */; };
 		9BBD234327B0C1AC004C1962 /* InfoChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBD234227B0C1AC004C1962 /* InfoChecker.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,8 +38,9 @@
 		9B293CC627AFB23C00B0C904 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		9B293CC927AFD56A00B0C904 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		9B293CCB27AFD57E00B0C904 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		9BB3B43A27B50D3700653610 /* SignUpContentsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpContentsData.swift; sourceTree = "<group>"; };
 		9BBD233E27B0A352004C1962 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
-		9BBD234027B0C169004C1962 /* UserInfoHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoHandler.swift; sourceTree = "<group>"; };
+		9BBD234027B0C169004C1962 /* SignUpContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpContentsView.swift; sourceTree = "<group>"; };
 		9BBD234227B0C1AC004C1962 /* InfoChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoChecker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,17 +141,26 @@
 		9B293CC827AFD54F00B0C904 /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				9BB3B43C27B52A6200653610 /* ContentsView */,
 				9B293CC927AFD56A00B0C904 /* SignUpView.swift */,
 				9B293CCB27AFD57E00B0C904 /* SignUpViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
 		};
+		9BB3B43C27B52A6200653610 /* ContentsView */ = {
+			isa = PBXGroup;
+			children = (
+				9BB3B43A27B50D3700653610 /* SignUpContentsData.swift */,
+				9BBD234027B0C169004C1962 /* SignUpContentsView.swift */,
+			);
+			path = ContentsView;
+			sourceTree = "<group>";
+		};
 		9BBD233D27B09B6B004C1962 /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				9BBD233E27B0A352004C1962 /* UserInfo.swift */,
-				9BBD234027B0C169004C1962 /* UserInfoHandler.swift */,
 				9BBD234227B0C1AC004C1962 /* InfoChecker.swift */,
 			);
 			path = Util;
@@ -229,8 +240,9 @@
 				9BBD234327B0C1AC004C1962 /* InfoChecker.swift in Sources */,
 				9B293CBD27AFAE2A00B0C904 /* MainView.swift in Sources */,
 				9B293CC727AFB23C00B0C904 /* UIView+.swift in Sources */,
-				9BBD234127B0C169004C1962 /* UserInfoHandler.swift in Sources */,
+				9BBD234127B0C169004C1962 /* SignUpContentsView.swift in Sources */,
 				9B293CC227AFB19500B0C904 /* SplashView.swift in Sources */,
+				9BB3B43B27B50D3700653610 /* SignUpContentsData.swift in Sources */,
 				9B293CCA27AFD56A00B0C904 /* SignUpView.swift in Sources */,
 				9B293CC427AFB19B00B0C904 /* SplashViewController.swift in Sources */,
 				9B293CCC27AFD57E00B0C904 /* SignUpViewController.swift in Sources */,
