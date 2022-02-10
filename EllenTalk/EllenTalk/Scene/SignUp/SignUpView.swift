@@ -14,66 +14,20 @@ protocol SignUpViewDelegate: AnyObject {
 class SignUpView: UIView {
     
     weak var delegate: SignUpViewDelegate?
+    private var signUpContentsViews: [SignUpViewable] = [
+        SignUpContentsData.email.returnView(),
+        SignUpContentsData.password.returnView(),
+        SignUpContentsData.passwordCheck.returnView()
+    ]
     
-    private lazy var emailLabel: UILabel = {
-        let label = UILabel(frame: .zero)
-        label.text = "이메일"
-        label.textColor = .init(named: "subColor")
-        label.textAlignment = .left
-        label.font = .systemFont(ofSize: 20, weight: .bold)
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    private lazy var emailTextField: UITextField = {
-        let textField = UITextField(frame: .zero)
-        textField.textColor = .black
-        textField.backgroundColor = .systemGray4
-        textField.layer.cornerRadius = 8
-        textField.textAlignment = .init(.justified)
-        textField.font = .systemFont(ofSize: 15, weight: .bold)
-        return textField
-    }()
-    
-    private lazy var passwordLabel: UILabel = {
-        let label = UILabel(frame: .zero)
-        label.text = "비밀번호"
-        label.textColor = .init(named: "subColor")
-        label.textAlignment = .left
-        label.font = .systemFont(ofSize: 20, weight: .bold)
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    private lazy var passwordTextField: UITextField = {
-        let textField = UITextField(frame: .zero)
-        textField.placeholder = "대,소,특수문자 1회 포함한 최소 8자리"
-        textField.textColor = .black
-        textField.backgroundColor = .systemGray4
-        textField.layer.cornerRadius = 8
-        textField.textAlignment = .init(.justified)
-        textField.font = .systemFont(ofSize: 15, weight: .bold)
-        return textField
-    }()
-    
-    private lazy var passwordCheckLabel: UILabel = {
-        let label = UILabel(frame: .zero)
-        label.text = "비밀번호 확인"
-        label.textColor = .init(named: "subColor")
-        label.textAlignment = .left
-        label.font = .systemFont(ofSize: 20, weight: .bold)
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    private lazy var passwordCheckTextField: UITextField = {
-        let textField = UITextField(frame: .zero)
-        textField.textColor = .black
-        textField.backgroundColor = .systemGray4
-        textField.layer.cornerRadius = 8
-        textField.textAlignment = .init(.justified)
-        textField.font = .systemFont(ofSize: 15, weight: .bold)
-        return textField
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView(frame: .zero)
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.distribution = .equalSpacing
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+       return stackView
     }()
     
     private lazy var doneButton: UIButton = {
@@ -101,65 +55,25 @@ class SignUpView: UIView {
 }
 
 extension SignUpView {
+    
     private func setUp() {
         self.backgroundColor = .white
-        addSubviews(emailLabel,
-                    emailTextField,
-                    passwordLabel,
-                    passwordTextField,
-                    passwordCheckLabel,
-                    passwordCheckTextField,
+        
+        addSubviews(stackView,
                     doneButton)
+        
+        signUpContentsViews.forEach {
+            stackView.addArrangedSubview($0)
+        }
     }
     
     private func setUpUI() {
         
-        // MARK: - emailLabel
+        // MARK: - stackView
         NSLayoutConstraint.activate([
-            emailLabel.topAnchor.constraint(equalTo: topAnchor, constant: 130),
-            emailLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            emailLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            emailLabel.heightAnchor.constraint(equalToConstant: 30)
-        ])
-        
-        // MARK: - emailTextField
-        NSLayoutConstraint.activate([
-            emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor),
-            emailTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            emailTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            emailTextField.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        
-        // MARK: - passwordLabel
-        NSLayoutConstraint.activate([
-            passwordLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 30),
-            passwordLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            passwordLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            passwordLabel.heightAnchor.constraint(equalToConstant: 30)
-        ])
-        
-        // MARK: - passwordTextField
-        NSLayoutConstraint.activate([
-            passwordTextField.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor),
-            passwordTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            passwordTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            passwordTextField.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        
-        // MARK: - passwordCheckLabel
-        NSLayoutConstraint.activate([
-            passwordCheckLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 30),
-            passwordCheckLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            passwordCheckLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            passwordCheckLabel.heightAnchor.constraint(equalToConstant: 30)
-        ])
-        
-        // MARK: - passwordCheckTextField
-        NSLayoutConstraint.activate([
-            passwordCheckTextField.topAnchor.constraint(equalTo: passwordCheckLabel.bottomAnchor),
-            passwordCheckTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            passwordCheckTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            passwordCheckTextField.heightAnchor.constraint(equalToConstant: 50)
+            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 6),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24)
         ])
         
         // MARK: - doneButton
@@ -174,13 +88,9 @@ extension SignUpView {
     @objc
     private func touchUpDoneButton() {
         delegate?.touchUpDoneButton()
-
     }
     
     func returnText() -> [String?] {
-        let email: String? = emailTextField.text?.description
-        let password: String? = passwordTextField.text?.description
-        let passwordCheck: String? = passwordCheckTextField.text?.description
-        return [email, password, passwordCheck]
+        return ["", "", ""]
     }
 }
