@@ -7,9 +7,14 @@
 
 import UIKit
 
+struct SignUpConponent {
+    let title: String
+    let placeHolder: String
+}
+
 class SignUpContentsView: UIView, SignUpViewable {
     
-    private lazy var titleLabel: UILabel = {
+     private lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.textColor = .init(named: "subColor")
         label.textAlignment = .left
@@ -21,6 +26,7 @@ class SignUpContentsView: UIView, SignUpViewable {
     private lazy var textFiledBackground: UIView = {
         let view = UIView(frame: .zero)
         view.backgroundColor = .systemGray4
+        view.layer.cornerRadius = 8
         return view
     }()
     
@@ -28,7 +34,6 @@ class SignUpContentsView: UIView, SignUpViewable {
         let textField = UITextField(frame: .zero)
         textField.textColor = .black
         textField.backgroundColor = .clear
-        textField.layer.cornerRadius = 8
         textField.textAlignment = .init(.justified)
         textField.font = .systemFont(ofSize: 15, weight: .bold)
         return textField
@@ -54,10 +59,10 @@ class SignUpContentsView: UIView, SignUpViewable {
 }
 
 extension SignUpContentsView {
-    convenience init(title: String, placeHolder: String) {
+    convenience init(_ component: SignUpConponent) {
         self.init(frame: .zero)
-        titleLabel.text = title
-        textField.placeholder = placeHolder
+        titleLabel.text = component.title
+        textField.placeholder = component.placeHolder
         setUp()
         setUpUI()
     }
@@ -85,7 +90,8 @@ extension SignUpContentsView {
             textFiledBackground.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
             textFiledBackground.leadingAnchor.constraint(equalTo: leadingAnchor),
             textFiledBackground.trailingAnchor.constraint(equalTo: trailingAnchor),
-            textFiledBackground.heightAnchor.constraint(equalToConstant: 42)
+            textFiledBackground.heightAnchor.constraint(equalToConstant: 42),
+            textFiledBackground.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         
         // MARK: textField
