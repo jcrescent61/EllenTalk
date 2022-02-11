@@ -14,17 +14,14 @@ protocol SignUpViewDelegate: AnyObject {
 class SignUpView: UIView {
     
     weak var delegate: SignUpViewDelegate?
-    private var signUpContentsViews: [SignUpViewable] = [
-        SignUpContentsData.email.returnView(),
-        SignUpContentsData.password.returnView(),
-        SignUpContentsData.passwordCheck.returnView()
-    ]
+    private var signUpContentsViews: [SignUpViewable] = []
     
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(frame: .zero)
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .equalSpacing
+        stackView.spacing = 15
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.translatesAutoresizingMaskIntoConstraints = false
        return stackView
@@ -49,6 +46,13 @@ class SignUpView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        setUp()
+        setUpUI()
+    }
+    
+    init(_ views: [SignUpViewable]) {
+        self.signUpContentsViews = views
+        super.init(frame: .zero)
         setUp()
         setUpUI()
     }
@@ -78,6 +82,7 @@ extension SignUpView {
         
         // MARK: - doneButton
         NSLayoutConstraint.activate([
+            doneButton.topAnchor.constraint(greaterThanOrEqualTo: stackView.bottomAnchor, constant: 0),
             doneButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -100),
             doneButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             doneButton.heightAnchor.constraint(equalToConstant: 60),
