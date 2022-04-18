@@ -9,37 +9,35 @@ import UIKit
 
 class SplashView: UIView {
     
-    private lazy var logoImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "ellenTalkLogo"))
-        imageView.contentMode = .scaleAspectFit
-        return imageView
+    private lazy var welcomeLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.font = UIFont.preferredFont(forTextStyle: .title3)
+        label.text = "Welcome!"
+        label.textColor = .white
+        return label
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setUp()
+        setUpUI()
+
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setUp()
+        setUpUI()
     }
 }
 
 extension SplashView {
-    private func setUp() {
-        setUpUI()
-    }
-    
+
     private func setUpUI() {
         self.backgroundColor = .init(named: "mainColor")
-        addSubviews(logoImageView)
+        addSubviews(welcomeLabel)
         
         NSLayoutConstraint.activate([
-            logoImageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            logoImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            logoImageView.heightAnchor.constraint(equalToConstant: 250),
-            logoImageView.widthAnchor.constraint(equalToConstant: 250)
+            welcomeLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            welcomeLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
 }

@@ -16,16 +16,16 @@ class SignUpContentsView: UIView, SignUpViewable {
     
      private lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.textColor = .init(named: "subColor")
+        label.textColor = UIColor(named: "subColor")
         label.textAlignment = .left
-        label.font = .systemFont(ofSize: 20, weight: .bold)
+         label.font = UIFont.preferredFont(forTextStyle: .headline)
         label.numberOfLines = 0
         return label
     }()
     
     private lazy var textFiledBackground: UIView = {
         let view = UIView(frame: .zero)
-        view.backgroundColor = .systemGray4
+        view.backgroundColor = .white
         view.layer.cornerRadius = 8
         return view
     }()
@@ -35,13 +35,13 @@ class SignUpContentsView: UIView, SignUpViewable {
         textField.textColor = .black
         textField.backgroundColor = .clear
         textField.textAlignment = .init(.justified)
-        textField.font = .systemFont(ofSize: 15, weight: .bold)
+        textField.font = UIFont.preferredFont(forTextStyle: .body)
         return textField
     }()
     
     private lazy var lightView: UIImageView = {
         let view = UIImageView(image: UIImage(systemName: "checkmark.circle.fill"))
-        view.tintColor = .green
+        view.tintColor = .clear
        return view
     }()
     
@@ -68,7 +68,7 @@ extension SignUpContentsView {
     }
     
     private func setUp() {
-        backgroundColor = .white
+        backgroundColor = .clear
         addSubviews(titleLabel,
                     textFiledBackground,
                     textField,

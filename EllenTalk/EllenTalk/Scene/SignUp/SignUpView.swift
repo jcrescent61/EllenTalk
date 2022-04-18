@@ -31,8 +31,8 @@ class SignUpView: UIView {
         let button = UIButton(frame: .zero)
         button.setTitle("완료", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
-        button.backgroundColor = .init(named: "subColor")
+        button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
+        button.backgroundColor = .init(named: "mainColor")
         button.layer.cornerRadius = 8
         button.addTarget(self, action: #selector(touchUpDoneButton), for: .touchUpInside)
         return button
@@ -61,7 +61,7 @@ class SignUpView: UIView {
 extension SignUpView {
     
     private func setUp() {
-        self.backgroundColor = .white
+        self.backgroundColor = .systemGray6
         
         addSubviews(stackView,
                     doneButton)

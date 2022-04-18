@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 protocol SignUpViewable: UIView {}
 
 enum SignUpContentsData {
@@ -38,9 +37,9 @@ class SignUpViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
-         self.view.endEditing(true)
-   }
-
+        self.view.endEditing(true)
+    }
+    
     deinit {
         print("SignUpView was Deinitialized")
     }
@@ -49,6 +48,5 @@ class SignUpViewController: UIViewController {
 extension SignUpViewController {
     private func setUp() {
         view = signUpView
-        signUpView.backgroundColor = .white
     }
 }
