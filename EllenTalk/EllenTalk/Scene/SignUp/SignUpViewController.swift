@@ -17,9 +17,11 @@ enum SignUpContentsData {
     func returnView() -> SignUpViewable {
         switch self {
         case .email:
-            return SignUpContentsView(SignUpConponent(title: "이메일", placeHolder: "ex)jcrescent61@google.com"))
+            return SignUpContentsView(SignUpConponent(title: "이메일",
+                                                      placeHolder: "ex)jcrescent61@google.com"))
         case .password:
-            return SignUpContentsView(SignUpConponent(title: "비밀번호", placeHolder: "대,소,특수문자 최소 1회 포함"))
+            return SignUpContentsView(SignUpConponent(title: "비밀번호",
+                                                      placeHolder: "대,소,특수문자 최소 1회 포함"))
         case .passwordCheck:
             return SignUpContentsView(SignUpConponent(title: "비밀번호 확인", placeHolder: ""))
         }
