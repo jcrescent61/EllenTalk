@@ -13,12 +13,12 @@ struct SignUpConponent {
 }
 
 class SignUpContentsView: UIView, SignUpViewable {
-    
-     private lazy var titleLabel: UILabel = {
+
+    private lazy var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.textColor = UIColor(named: "subColor")
         label.textAlignment = .left
-         label.font = UIFont.preferredFont(forTextStyle: .headline)
+        label.font = UIFont.preferredFont(forTextStyle: .headline)
         label.numberOfLines = 0
         return label
     }()
@@ -45,7 +45,7 @@ class SignUpContentsView: UIView, SignUpViewable {
     private lazy var lightView: UIImageView = {
         let view = UIImageView(image: UIImage(systemName: "checkmark.circle.fill"))
         view.tintColor = .clear
-       return view
+        return view
     }()
     
     override init(frame: CGRect) {
@@ -66,6 +66,7 @@ extension SignUpContentsView {
         self.init(frame: .zero)
         titleLabel.text = component.title
         textField.placeholder = component.placeHolder
+        
         setUp()
         setUpUI()
     }

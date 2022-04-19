@@ -7,13 +7,8 @@
 
 import UIKit
 
-protocol SignUpViewDelegate: AnyObject {
-    func touchUpDoneButton()
-}
-
 class SignUpView: UIView {
     
-    weak var delegate: SignUpViewDelegate?
     private var signUpContentsViews: [SignUpViewable] = []
     
     private lazy var stackView: UIStackView = {
@@ -92,10 +87,6 @@ extension SignUpView {
     
     @objc
     private func touchUpDoneButton() {
-        delegate?.touchUpDoneButton()
-    }
-    
-    func returnText() -> [String?] {
-        return ["", "", ""]
+        print("미구현")
     }
 }
