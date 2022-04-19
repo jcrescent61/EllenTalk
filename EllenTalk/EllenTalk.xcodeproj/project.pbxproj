@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E2B87F0280E71AF008EF402 /* DoubleSignUpContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2B87EF280E71AF008EF402 /* DoubleSignUpContentsView.swift */; };
 		9B293CA527AFAC6500B0C904 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B293CA427AFAC6500B0C904 /* AppDelegate.swift */; };
 		9B293CA727AFAC6500B0C904 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B293CA627AFAC6500B0C904 /* SceneDelegate.swift */; };
 		9B293CAE27AFAC6600B0C904 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B293CAD27AFAC6600B0C904 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E2B87EF280E71AF008EF402 /* DoubleSignUpContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleSignUpContentsView.swift; sourceTree = "<group>"; };
 		9B293CA127AFAC6500B0C904 /* EllenTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EllenTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B293CA427AFAC6500B0C904 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B293CA627AFAC6500B0C904 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				9BBD234027B0C169004C1962 /* SignUpContentsView.swift */,
+				7E2B87EF280E71AF008EF402 /* DoubleSignUpContentsView.swift */,
 			);
 			path = ContentsView;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				9B293CBD27AFAE2A00B0C904 /* MainView.swift in Sources */,
 				9B293CC727AFB23C00B0C904 /* UIView+.swift in Sources */,
 				9BBD234127B0C169004C1962 /* SignUpContentsView.swift in Sources */,
+				7E2B87F0280E71AF008EF402 /* DoubleSignUpContentsView.swift in Sources */,
 				9B293CC227AFB19500B0C904 /* SplashView.swift in Sources */,
 				9B293CCA27AFD56A00B0C904 /* SignUpView.swift in Sources */,
 				9B293CC427AFB19B00B0C904 /* SplashViewController.swift in Sources */,
