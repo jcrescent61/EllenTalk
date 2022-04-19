@@ -23,9 +23,9 @@ class SignUpContentsView: UIView, SignUpViewable {
         return label
     }()
     
-    private lazy var textFiledBackground: UIView = {
+    private lazy var textFieldBackground: UIView = {
         let view = UIView(frame: .zero)
-        view.backgroundColor = .white
+        view.backgroundColor = .clear
         view.layer.cornerRadius = 8
         return view
     }()
@@ -33,7 +33,10 @@ class SignUpContentsView: UIView, SignUpViewable {
     private lazy var textField: UITextField = {
         let textField = UITextField(frame: .zero)
         textField.textColor = .black
-        textField.backgroundColor = .clear
+        textField.backgroundColor = .white
+        textField.layer.cornerRadius = 8
+        textField.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 16.0, height: 0.0))
+        textField.leftViewMode = .always
         textField.textAlignment = .init(.justified)
         textField.font = UIFont.preferredFont(forTextStyle: .body)
         return textField
@@ -70,7 +73,6 @@ extension SignUpContentsView {
     private func setUp() {
         backgroundColor = .clear
         addSubviews(titleLabel,
-                    textFiledBackground,
                     textField,
                     lightView)
     }
@@ -85,28 +87,20 @@ extension SignUpContentsView {
             titleLabel.heightAnchor.constraint(equalToConstant: 24)
         ])
         
-        // MARK: textFieldBackground
-        NSLayoutConstraint.activate([
-            textFiledBackground.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
-            textFiledBackground.leadingAnchor.constraint(equalTo: leadingAnchor),
-            textFiledBackground.trailingAnchor.constraint(equalTo: trailingAnchor),
-            textFiledBackground.heightAnchor.constraint(equalToConstant: 42),
-            textFiledBackground.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
-        
         // MARK: textField
         NSLayoutConstraint.activate([
-            textField.topAnchor.constraint(equalTo: textFiledBackground.topAnchor),
-            textField.leadingAnchor.constraint(equalTo: textFiledBackground.leadingAnchor, constant: 25),
-            textField.trailingAnchor.constraint(equalTo: lightView.leadingAnchor),
-            textField.bottomAnchor.constraint(equalTo: textFiledBackground.bottomAnchor)
+            textField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
+            textField.leadingAnchor.constraint(equalTo: leadingAnchor),
+            textField.trailingAnchor.constraint(equalTo: trailingAnchor),
+            textField.heightAnchor.constraint(equalToConstant: 42),
+            textField.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         
         // MARK: lightView
         NSLayoutConstraint.activate([
-            lightView.topAnchor.constraint(equalTo: textFiledBackground.topAnchor, constant: 10),
-            lightView.trailingAnchor.constraint(equalTo: textFiledBackground.trailingAnchor, constant: -10),
-            lightView.bottomAnchor.constraint(equalTo: textFiledBackground.bottomAnchor, constant: -10),
+            lightView.topAnchor.constraint(equalTo: textField.topAnchor, constant: 10),
+            lightView.trailingAnchor.constraint(equalTo: textField.trailingAnchor, constant: -10),
+            lightView.bottomAnchor.constraint(equalTo: textField.bottomAnchor, constant: -10),
             lightView.widthAnchor.constraint(equalToConstant: 25)
         ])
     }
